@@ -8,7 +8,6 @@ aws dynamodb create-table --table-name menu_items --attribute-definitions Attrib
 
 aws dynamodb create-table --table-name order --attribute-definitions AttributeName=order_id,AttributeType=S --key-schema AttributeName=order_id,KeyType=HASH --provisioned-throughput ReadCapacityUnits=5,WriteCapacityUnits=5
 
-//--aws dynamodb put-item --table-name order --item '{"order_id": {"S": "order_1"},"item_ids":{"L":[{"S":"item_a","S":"item_b"}]},"order_price":{"S":"it is description"},"item_3d_object":{"S":"3d image"},"item_ingredients":{"S":"ingredients"},"item_price":{"N":"290"},"item_eats":{"S":"veg/non veg"},"item_type":{"S":"muglai.chinese"}}' --condition-expression "attribute_not_exists(item_id)" //-put item in order table will be done thru step function
 
 insert data:-
 
