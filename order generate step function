@@ -1,0 +1,23 @@
+
+
+creating order step function:-
+
+"put_order":{
+  "Type": "Task",
+  "Resource": "arn:aws:states:::dynamodb:putItem" 
+  "Parameters": {
+    "TableName": "order",
+    "Item": {
+      "order_id": {},//to be generated
+      "order_item_id": {},//list honi chahiye
+      "order_price": {}//to be calculated
+    }
+},
+  "Retry": [
+    {
+      "ErrorEquals": ["States.ALL"],
+      "IntervalSeconds": 1,
+      "MaxAttempts": 3  
+    }
+  ]
+}
